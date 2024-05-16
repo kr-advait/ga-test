@@ -9,7 +9,11 @@
   gtag('js', new Date());
 
   gtag('config', 'G-0S2ZBCKZZM');
-  gtag('event', 'testEvent', {name: "try", txid: "0x123...", userId: 125}, (err)=>console.log);
+  function sendEvent(){
+      console.log("send event called");
+      gtag('event', 'testEvent', {name: "try", txid: "0x123...", userId: 125}, (err)=>console.log("Err :", err));
+      console.log("event sent");
+  }
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,5 +21,10 @@
 </head>
 <body>
     GA4
+    <br>
+    <br>
+    <br>
+    <br>
+    <button onclick="sendEvent()" >Send Event</button>
 </body>
 </html>
